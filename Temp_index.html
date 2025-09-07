@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TempConvert</title>
+
+  
+  <link rel="stylesheet" href="styles.css" />
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="brand" aria-hidden="false">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M14 10.5V5a2 2 0 10-4 0v5.5A4 4 0 1014 10.5z" fill="white" opacity="0.12"/>
+        <path d="M12 2v9.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="12" cy="17" r="3" fill="white" opacity="0.18"/>
+      </svg>
+      <span>TempConvert</span>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <div class="card" role="application" aria-labelledby="title">
+
+      <!-- Card Header -->
+      <div class="card-header">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+            <path d="M14 10.5V5a2 2 0 10-4 0v5.5A4 4 0 1014 10.5z" fill="hsl(var(--orange))"/>
+          </svg>
+        </div>
+        <div>
+          <h1 id="title">Temperature Converter</h1>
+          <p class="lead">Convert between Celsius, Fahrenheit, and Kelvin accurately.</p>
+        </div>
+      </div>
+
+      <!-- Card Body -->
+      <div class="card-body">
+
+        <!-- Input Section -->
+        <div class="grid row-2">
+          <div>
+            <label for="temp">Enter temperature</label>
+            <input id="temp" name="temp" inputmode="decimal" type="text" placeholder="e.g. 37" aria-describedby="tempHelp" />
+            <div id="tempHelp" class="muted-text">
+              Type a number (decimals and negatives allowed).
+            </div>
+            <div id="tempError" class="error" role="alert" aria-live="polite" style="display:none"></div>
+          </div>
+
+          <!-- Units Selection -->
+          <div class="grid units-grid">
+            <div>
+              <label for="from">From</label>
+              <select id="from" name="from" aria-label="From unit">
+                <option value="C">Celsius (°C)</option>
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="K">Kelvin (K)</option>
+              </select>
+            </div>
+            <div>
+              <label for="to">To</label>
+              <select id="to" name="to" aria-label="To unit">
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="C">Celsius (°C)</option>
+                <option value="K">Kelvin (K)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls" aria-hidden="false">
+          <button id="convertBtn" class="btn-primary" type="button">Convert</button>
+          <button id="swapBtn" class="btn-ghost" type="button" aria-label="Swap units">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="transform:translateY(-1px)">
+              <path d="M21 15v4h-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 9v-4h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 5l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 19l6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Swap
+          </button>
+        </div>
+
+        <!-- Result Display -->
+        <div class="result" aria-live="polite">
+          <div class="title">Result</div>
+          <div id="resultValue" class="value">—</div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
